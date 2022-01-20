@@ -51,7 +51,7 @@ gradle clean test
 >
 > + <code>credentials.properties</code>
 >
-> В файле должны быть расположены: _user_name_ и _access_key_ в <code>BrowserStack</code>; _remoteURL_, где будут запускаться тесты и _appURL_, для которого будут запускаться тесты (в данном случае это мобильное приложение [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia&hl=ru&gl=US)).
+> В файле должны быть расположены: _user_name_ и _access_key_ в <code>BrowserStack</code>; _remoteURL_, где будут запускаться тесты, и _appURL_, для которого будут запускаться тесты (в данном случае это мобильное приложение [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia&hl=ru&gl=US)).
 >
 > + <code>device.properties</code>
 >
