@@ -46,7 +46,20 @@
 gradle clean test
 ```
 
-> :information_source: Для запуска тестов должен существовать файл <code>credentials.properties</code>. В файле должны быть расположены _User Name_ и _Access Key_ в <code>BrowserStack</code> и _ссылка на приложение_, для которого будут запускаться тесты (в данном случае это мобильное приложение [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia&hl=ru&gl=US)).
+> <details>
+> <summary> :information_source: Для запуска тестов должны существовать следующие файлы ⇩ </summary>
+>
+> + <code>credentials.properties</code>
+>
+> В файле должны быть расположены: _user_name_ и _access_key_ в <code>BrowserStack</code>; _remoteURL_, где будут запускаться тесты и _appURL_, для которого будут запускаться тесты (в данном случае это мобильное приложение [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia&hl=ru&gl=US)).
+>
+> + <code>device.properties</code>
+>
+> В файле должны быть расположены: _device_, на котором будут запускаться тесты и _os_version_ девайса.
+>
+> + <code>project.properties</code>
+>
+> В файле должны быть расположены: _project_ - название проекта, _build_ - название сборки, name - название группы тестов.
 
 ### :joystick: Формирование отчета Allure
 
