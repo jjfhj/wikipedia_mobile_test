@@ -2,7 +2,7 @@
 
 ## <img width="4%" title="Functional" src="images/functional.png"> Покрытый функционал
 
-> Разработаны автотесты <code>UI</code>.
+> Разработаны автотесты на <code>UI</code>.
 
 ### UI
 
@@ -24,7 +24,7 @@
 <img width="6%" title="BrowserStack" src="images/logo/Browserstack.svg">
 </p>
 
-> В данном проекте автотесты написаны на <code>Java</code> с использованием фреймворка <code>Selenide</code> для UI-тестов и библиотеки <code>REST Assured</code> для API-тестов.
+> В данном проекте автотесты написаны на <code>Java</code> с использованием фреймворка <code>Selenide</code> для UI-тестов и библиотеки <code>REST Assured</code> для отображения видео в отчете.
 >
 > <code>BrowserStack</code> выполняет запуск приложения на удаленном мобильном Android-устройстве.
 >
