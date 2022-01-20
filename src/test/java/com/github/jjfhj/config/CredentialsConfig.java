@@ -13,4 +13,7 @@ public interface CredentialsConfig extends Config {
 
     @Key("app")
     String app();
+
+    @Key("url")
+    String url();
 }

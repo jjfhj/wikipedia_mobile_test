@@ -16,10 +16,11 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     private static String user = credentials.user();
     private static String key = credentials.key();
     private static String app = credentials.app();
+    private static String url = credentials.url();
 
     public static URL getBrowserstackUrl() {
         try {
-            return new URL("http://hub.browserstack.com/wd/hub");
+            return new URL(url);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
