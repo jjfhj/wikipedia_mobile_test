@@ -3,6 +3,7 @@ package com.github.jjfhj.drivers;
 import com.codeborne.selenide.WebDriverProvider;
 import com.github.jjfhj.config.CredentialsConfig;
 import com.github.jjfhj.config.DeviceConfig;
+import com.github.jjfhj.config.ProjectConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +23,11 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     private static final DeviceConfig config = ConfigFactory.create(DeviceConfig.class, System.getProperties());
     private static final String device = config.device();
     private static final String os_version = config.os_version();
+
+    private static final ProjectConfig projectConfig = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+    private static final String project = projectConfig.project();
+    private static final String build = projectConfig.build();
+    private static final String name = projectConfig.name();
 
     public static URL getBrowserstackUrl() {
         try {
@@ -45,9 +51,9 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("os_version", os_version);
 
         // Set other BrowserStack capabilities
-        desiredCapabilities.setCapability("project", "Java Project");
-        desiredCapabilities.setCapability("build", "browserstack-build-1");
-        desiredCapabilities.setCapability("name", "wikipedia_test");
+        desiredCapabilities.setCapability("project", project);
+        desiredCapabilities.setCapability("build", build);
+        desiredCapabilities.setCapability("name", name);
 
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above
