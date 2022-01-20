@@ -15,10 +15,10 @@ import java.net.URL;
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
     private static final CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-    private static final String user = credentials.user();
-    private static final String key = credentials.key();
-    private static final String app = credentials.app();
-    private static final String url = credentials.url();
+    private static final String user = credentials.user_name();
+    private static final String key = credentials.access_key();
+    private static final String app = credentials.appURL();
+    private static final String url = credentials.remoteURL();
 
     private static final DeviceConfig config = ConfigFactory.create(DeviceConfig.class, System.getProperties());
     private static final String device = config.device();

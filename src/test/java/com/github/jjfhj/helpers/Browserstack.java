@@ -8,8 +8,8 @@ import static io.restassured.RestAssured.given;
 public class Browserstack {
 
     private static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-    private static String user = credentials.user();
-    private static String key = credentials.key();
+    private static String user = credentials.user_name();
+    private static String key = credentials.access_key();
 
     public static String videoUrl(String sessionId) {
         return given()

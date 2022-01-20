@@ -5,15 +5,15 @@ import org.aeonbits.owner.Config;
 @Config.Sources({"classpath:config/credentials.properties"})
 public interface CredentialsConfig extends Config {
 
-    @Key("user")
-    String user();
+    @Key("user_name")
+    String user_name();
 
-    @Key("key")
-    String key();
+    @Key("access_key")
+    String access_key();
 
-    @Key("app")
-    String app();
+    @Key("appURL")
+    String appURL();
 
-    @Key("url")
-    String url();
+    @Key("remoteURL")
+    String remoteURL();
 }
