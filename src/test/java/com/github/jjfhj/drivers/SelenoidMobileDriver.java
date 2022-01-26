@@ -27,7 +27,6 @@ public class SelenoidMobileDriver implements WebDriverProvider {
     private static final String appPackage = selenoid.appPackage();
     private static final String appActivity = selenoid.appActivity();
     private static final String app = selenoid.app();
-    private static final String videoURL = selenoid.videoStorageURL();
     private static String remoteURL = format("https://%s:%s@%s", login, password, selenoidURL);
 
     public static URL getUrl() {
