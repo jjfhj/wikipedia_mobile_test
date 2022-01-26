@@ -31,7 +31,7 @@ public class TestBase {
             case "selenoid":
                 Configuration.browser = SelenoidMobileDriver.class.getName();
                 break;
-            case "local":
+            case "emulation":
                 Configuration.browser = EmulationMobileDriver.class.getName();
                 break;
             case "real":
@@ -39,7 +39,7 @@ public class TestBase {
                 break;
             default:
                 System.out.println("Необходимо запустить со следующим параметром " +
-                        "-DeviceHost=browserstack/selenoid/emulation/real");
+                        "-DdeviceHost=browserstack/selenoid/emulation/real");
         }
 
         Configuration.startMaximized = false;
