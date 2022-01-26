@@ -11,7 +11,7 @@ public class BrowserstackVideo {
     private static String user = browserstack.user_name();
     private static String key = browserstack.access_key();
 
-    public static String videoUrl(String sessionId) {
+    public static String getVideoUrl(String sessionId) {
         return given()
                 .auth().basic(user, key)
                 .when()
