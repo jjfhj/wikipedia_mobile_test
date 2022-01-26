@@ -10,7 +10,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.github.jjfhj.utils.FileUtils.getAbsolutePath;
 import static java.lang.String.format;
 
 public class SelenoidMobileDriver implements WebDriverProvider {
@@ -50,12 +49,20 @@ public class SelenoidMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("appPackage", appPackage);
         desiredCapabilities.setCapability("appActivity", appActivity);
 
-        desiredCapabilities.setCapability("app",
-                getAbsolutePath(app));
+        desiredCapabilities.setCapability("app", apkUrl());
 
         desiredCapabilities.setCapability("enableVNC", true);
         desiredCapabilities.setCapability("enableVideo", true);
 
         return new AndroidDriver(getUrl(), desiredCapabilities);
+    }
+
+    private URL apkUrl() {
+        try {
+            return new URL(app);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
