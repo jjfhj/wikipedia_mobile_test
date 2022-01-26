@@ -23,7 +23,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     private static final String build = browserstack.build();
     private static final String name = browserstack.name();
 
-    public static URL getBrowserstackUrl() {
+    public static URL getUrl() {
         try {
             return new URL(url);
         } catch (MalformedURLException e) {
@@ -51,6 +51,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above
-        return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
+        return new AndroidDriver(getUrl(), desiredCapabilities);
     }
 }

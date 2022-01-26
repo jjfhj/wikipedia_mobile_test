@@ -25,7 +25,7 @@ public class EmulationMobileDriver implements WebDriverProvider {
     private static final String app = emulation.app();
     private static final String url = emulation.remoteURL();
 
-    public static URL getBrowserstackUrl() {
+    public static URL getUrl() {
         try {
             return new URL(url);
         } catch (MalformedURLException e) {
@@ -49,6 +49,6 @@ public class EmulationMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("app",
                 getAbsolutePath(app));
 
-        return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
+        return new AndroidDriver(getUrl(), desiredCapabilities);
     }
 }
