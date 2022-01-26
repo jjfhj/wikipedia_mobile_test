@@ -1,9 +1,7 @@
 package com.github.jjfhj.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import com.github.jjfhj.config.CredentialsConfig;
-import com.github.jjfhj.config.DeviceConfig;
-import com.github.jjfhj.config.ProjectConfig;
+import com.github.jjfhj.config.BrowserstackConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
@@ -14,20 +12,16 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    private static final CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-    private static final String user = credentials.user_name();
-    private static final String key = credentials.access_key();
-    private static final String app = credentials.appURL();
-    private static final String url = credentials.remoteURL();
-
-    private static final DeviceConfig config = ConfigFactory.create(DeviceConfig.class, System.getProperties());
-    private static final String device = config.device();
-    private static final String os_version = config.os_version();
-
-    private static final ProjectConfig projectConfig = ConfigFactory.create(ProjectConfig.class, System.getProperties());
-    private static final String project = projectConfig.project();
-    private static final String build = projectConfig.build();
-    private static final String name = projectConfig.name();
+    private static final BrowserstackConfig browserstack = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+    private static final String user = browserstack.user_name();
+    private static final String key = browserstack.access_key();
+    private static final String app = browserstack.appURL();
+    private static final String url = browserstack.remoteURL();
+    private static final String device = browserstack.device();
+    private static final String os_version = browserstack.os_version();
+    private static final String project = browserstack.project();
+    private static final String build = browserstack.build();
+    private static final String name = browserstack.name();
 
     public static URL getBrowserstackUrl() {
         try {

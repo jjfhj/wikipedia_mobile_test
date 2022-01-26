@@ -1,15 +1,15 @@
 package com.github.jjfhj.helpers;
 
-import com.github.jjfhj.config.CredentialsConfig;
+import com.github.jjfhj.config.BrowserstackConfig;
 import org.aeonbits.owner.ConfigFactory;
 
 import static io.restassured.RestAssured.given;
 
 public class Browserstack {
 
-    private static CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class, System.getProperties());
-    private static String user = credentials.user_name();
-    private static String key = credentials.access_key();
+    private static BrowserstackConfig browserstack = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+    private static String user = browserstack.user_name();
+    private static String key = browserstack.access_key();
 
     public static String videoUrl(String sessionId) {
         return given()
