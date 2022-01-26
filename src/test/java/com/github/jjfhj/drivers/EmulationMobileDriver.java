@@ -25,7 +25,6 @@ public class EmulationMobileDriver implements WebDriverProvider {
     private static final String app = emulation.app();
     private static final String url = emulation.remoteURL();
 
-
     public static URL getBrowserstackUrl() {
         try {
             return new URL(url);
