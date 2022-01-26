@@ -5,7 +5,7 @@ import org.aeonbits.owner.ConfigFactory;
 
 import static io.restassured.RestAssured.given;
 
-public class Browserstack {
+public class BrowserstackVideo {
 
     private static BrowserstackConfig browserstack = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
     private static String user = browserstack.user_name();
