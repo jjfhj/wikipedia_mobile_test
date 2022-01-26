@@ -4,6 +4,9 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.jjfhj.drivers.BrowserstackMobileDriver;
+import com.github.jjfhj.drivers.EmulationMobileDriver;
+import com.github.jjfhj.drivers.RealMobileDriver;
+import com.github.jjfhj.drivers.SelenoidMobileDriver;
 import com.github.jjfhj.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -15,11 +18,30 @@ import static io.qameta.allure.Allure.step;
 
 public class TestBase {
 
+    public static String deviceHost = System.getProperty("deviceHost");
+
     @BeforeAll
     public static void setup() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
+        switch (deviceHost) {
+            case "browserstack":
+                Configuration.browser = BrowserstackMobileDriver.class.getName();
+                break;
+            case "selenoid":
+                Configuration.browser = SelenoidMobileDriver.class.getName();
+                break;
+            case "local":
+                Configuration.browser = EmulationMobileDriver.class.getName();
+                break;
+            case "real":
+                Configuration.browser = RealMobileDriver.class.getName();
+                break;
+            default:
+                System.out.println("Необходимо запустить со следующим параметром " +
+                        "-DeviceHost=browserstack/selenoid/emulation/real");
+        }
+
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
         Configuration.timeout = 10000;
@@ -34,14 +56,16 @@ public class TestBase {
 
     @AfterEach
     public void afterEach() {
-        String sessionId = getSessionId();
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
+
+        if (deviceHost.equals("selenoid") || deviceHost.equals("browserstack")) {
+            String sessionId = getSessionId();
+            Attach.attachVideo(sessionId);
+        }
 
         step("Закрыть браузер", () -> {
             Selenide.closeWebDriver();
         });
-
-        Attach.attachVideo(sessionId);
     }
 }
