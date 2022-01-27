@@ -63,6 +63,12 @@ task browserstack(type: Test) {
     }
 }
 
+task selenoid(type: Test) {
+    useJUnitPlatform {
+        includeTags 'selenoid'
+    }
+}
+
 task emulation(type: Test) {
     useJUnitPlatform {
         includeTags 'emulation'
@@ -72,11 +78,5 @@ task emulation(type: Test) {
 task real(type: Test) {
     useJUnitPlatform {
         includeTags 'real'
-    }
-}
-
-task selenoid(type: Test) {
-    useJUnitPlatform {
-        includeTags 'selenoid'
     }
 }
