@@ -1,4 +1,4 @@
-# UI-автотесты для мобильного приложения [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia&hl=ru&gl=US)
+# Проект по автоматизации тестирования UI для мобильного приложения [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia&hl=ru&gl=US)
 
 ## <img width="4%" title="Functional" src="images/functional.png"> Покрытый функционал
 
