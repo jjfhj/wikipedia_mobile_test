@@ -8,12 +8,15 @@
 
 - [x] Отображение результатов поиска
 - [x] Открытие страницы из результатов поиска
+- [x] Проверка первых четырех экранов Getting Started
 
 ## <img width="4%" title="Technologies" src="images/technologies.png"> Технологический стек
 
 <p align="center">
 <img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">
 <img width="6%" title="Java" src="images/logo/Java.svg">
+<img width="6%" title="Selenide" src="images/logo/Selenide.svg">
+<img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
 <img width="6%" title="Allure Report" src="images/logo/Allure_Report.svg">
 <img width="6%" title="Gradle" src="images/logo/Gradle.svg">
 <img width="6%" title="JUnit5" src="images/logo/JUnit5.svg">
@@ -21,12 +24,15 @@
 <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg">
 <img width="6%" title="Allure TestOps" src="images/logo/Allure_TestOps.svg">
 <img width="6%" title="Rest Assured" src="images/logo/Rest-Assured.svg">
+<img width="6%" title="Appium" src="images/logo/Appium.svg">
 <img width="6%" title="BrowserStack" src="images/logo/Browserstack.svg">
 </p>
 
-> В данном проекте автотесты написаны на <code>Java</code> с использованием фреймворка <code>Selenide</code> для UI-тестов и библиотеки <code>REST Assured</code> для отображения видео в отчете.
+> В данном проекте автотесты написаны на <code>Java</code> с использованием фреймворков <code>Selenide</code> и <code>Appium</code> для UI-тестов и библиотеки <code>REST Assured</code> для отображения видео в отчете.
 >
 > <code>BrowserStack</code> выполняет запуск приложения на удаленном мобильном Android-устройстве.
+>
+> <code>Selenoid</code> выполняет запуск приложения на удаленном сервере.
 >
 > <code>Allure Report</code> формирует отчет о запуске тестов.
 >
@@ -40,26 +46,102 @@
 
 ## <img width="4%" title="Terminal" src="images/terminal.png"> Запуск тестов из терминала
 
-### :joystick: Запуск тестов на [BrowserStack](https://www.browserstack.com/)
+### :joystick: Запуск тестов
 
 ```
-gradle clean test
+gradle clean ${TASK}
+-DdeviceHost=${DEVICE_HOST}
 ```
 
 > <details>
 > <summary> :information_source: Для запуска тестов должны существовать следующие файлы ⇩ </summary>
 >
-> + <code>credentials.properties</code>
+> <details>
+> <summary> <code>browserstack.properties</code> </summary>
 >
-> В файле должны быть расположены: _user_name_ и _access_key_ в <code>BrowserStack</code>; _remoteURL_, где будут запускаться тесты, и _appURL_, для которого будут запускаться тесты (в данном случае это мобильное приложение [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia&hl=ru&gl=US)).
+> **В файле должны быть расположены:**
+> + _user_name_ и _access_key_ – данные, расположеные в настройках <code>BrowserStack</code> для <code>App Automate</code>
+> + _appURL_ – ссылка на приложение, для которого будут запускаться тесты
+> + _remoteURL_ – адрес удаленного сервера, где будут запускаться тесты
+> + _device_ – имя девайса, на котором будут запускаться тесты
+> + _os_version_ – версия операционной системы девайса
+> + _project_ – название проекта
+> + _build_ – название сборки
+> + _name_ – название группы тестов
+> </details>
 >
-> + <code>device.properties</code>
+> <details>
+> <summary> <code>selenoid.properties</code> </summary>
 >
-> В файле должны быть расположены: _device_, на котором будут запускаться тесты и _os_version_ девайса.
+> **В файле должны быть расположены:**
+> + _selenoidURL_ – адрес удаленного сервера, на котором будут запускаться тесты
+> + _login_ и _password_ – данные для авторизации на удаленном сервере
+> + _deviceName_ – имя девайса, на котором будут запускаться тесты
+> + _platformName_ – имя платформы, на которой будут запускаться тесты
+> + _version_ – версия операционной системы девайса
+> + _locale_ – локализация приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + _language_ – язык приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + _appPackage_ – идентификатор пакета приложения
+> + _appActivity_ – название основной активности приложения
+> + _appURL_ – ссылка на приложение, для которого будут запускаться тесты
+> + _videoStorageURL_ – адрес хранилища видео выполненных тестов
+> </details>
 >
-> + <code>project.properties</code>
+> <details>
+> <summary> <code>emulation.properties</code> </summary>
 >
-> В файле должны быть расположены: _project_ – название проекта, _build_ – название сборки, name – название группы тестов.
+> **В файле должны быть расположены:**
+> + _deviceName_ – имя девайса, на котором будут запускаться тесты
+> + _platformName_ – имя платформы, на которой будут запускаться тесты
+> + _version_ – версия операционной системы девайса
+> + _locale_ – локализация приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + _language_ – язык приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + _appPackage_ – идентификатор пакета приложения
+> + _appActivity_ – название основной активности приложения
+> + _app_ – путь до приложения, для которого будут запускаться тесты
+> + _remoteURL_ – адрес удаленного сервера, на котором будут запускаться тесты
+> </details>
+>
+> <details>
+> <summary> <code>real.properties</code> </summary>
+>
+> **В файле должны быть расположены:**
+> + _deviceName_ – имя девайса, на котором будут запускаться тесты
+> + _platformName_ – имя платформы, на которой будут запускаться тесты
+> + _version_ – версия операционной системы девайса
+> + _locale_ – локализация приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + _language_ – язык приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + _appPackage_ – идентификатор пакета приложения
+> + _appActivity_ – название основной активности приложения
+> + _app_ – путь до приложения, для которого будут запускаться тесты
+> + _remoteURL_ – адрес удаленного сервера, на котором будут запускаться тесты
+> </details>
+>
+> </details>
+
+### :joystick: Параметры сборки
+
+> <details>
+> <summary> :point_left: <code>TASK</code> – список тестов, сгруппированных по параметру тега. В зависимости от выбранного параметра будут запускаться определенные группы тестов.</summary>
+>
+> **Доступные варианты:**
+>
+> + <code>browserstack</code> – запуск тестов с тегом _browserstack_ на платформе BrowserStack
+> + <code>selenoid</code> – запуск тестов с тегом _selenoid_ на удаленном сервере Selenoid
+> + <code>emulation</code> – запуск тестов с тегом _emulation_ на локальном эмуляторе устройства
+> + <code>real</code> – запуск тестов с тегом _real_ на реальном устройстве при его подключении через USB
+> </details>
+>
+> <details>
+> <summary> :point_left: <code>DEVICE_HOST</code> – список параметров для запуска приложения. В зависимости от выбранного параметра приложение будет запускаться на соответствующих стендах.</summary>
+>
+> **Доступные варианты:**
+>
+> + <code>browserstack</code> – запуск приложения на удаленном мобильном Android-устройстве на платформе _BrowserStack_
+> + <code>selenoid</code> – запуск приложения на удаленном сервере _Selenoid_
+> + <code>emulation</code> – запуск приложения на локальном эмуляторе мобильного Android-устройства в _Android Studio IDE_
+> + <code>real</code> – запуск приложения на _реальном устройстве_ при его подключении через USB
+> </details>
 
 ### :joystick: Формирование отчета Allure
 
@@ -74,10 +156,12 @@ allure serve build/allure-results
 ### :rocket: Для запуска тестов в Jenkins необходимо выполнить следующие шаги:
 
 1. Открыть сборку [Jenkins](https://jenkins.autotests.cloud/job/jjfhj-wikipedia_mobile_test/)
-2. Нажать на таск <code>"Собрать сейчас"</code>
+2. Нажать на таск <code>"Собрать с параметрами"</code>
+3. Указать [значения параметров](#joystick-параметры-сборки)
+4. Нажать на кнопку <code>"Собрать"</code>
 
 <p align="center">
-<img title="Jenkins build" src="images/screens/jenkins_build.png">
+<img title="Jenkins parameters" src="images/screens/jenkins_parameters.png">
 </p>
 
 ### :rocket: Для формирования отчета о прохождении тестов в Allure Report необходимо выполнить следующий шаг:
@@ -189,10 +273,16 @@ allure serve build/allure-results
 <img title="Allure Test Cases" src="images/screens/allure_testcases.png">
 </p>
 
-## <img width="4%" title="BrowserStack" src="images/logo/Browserstack.svg"> Пример запуска теста в BrowserStack
+> К каждому тесту в отчете прилагается видео. Примеры таких видео представлены ниже.
 
-> К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
+## <img width="4%" title="BrowserStack" src="images/logo/Browserstack.svg"> Пример запуска теста в BrowserStack
 
 <p align="center">
 <img title="BrowserStack Video" src="images/gif/browserstack_video.gif">
+</p>
+
+## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid
+
+<p align="center">
+<img title="Selenoid Video" src="images/gif/selenoid_video.gif">
 </p>
