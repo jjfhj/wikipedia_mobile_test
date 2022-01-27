@@ -5,6 +5,7 @@ import io.appium.java_client.MobileBy;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class GettingStartedPage {
@@ -22,7 +23,8 @@ public class GettingStartedPage {
             thirdScreen = $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")),
             nextButtonOnTheThirdScreen = $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")),
             fourthScreen = $(MobileBy.id("org.wikipedia.alpha:id/primaryTextView")),
-            buttonReadyOnTheFourthScreen = $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_done_button"));
+            buttonReadyOnTheFourthScreen = $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_done_button")),
+            searchField = $(MobileBy.AccessibilityId("Search Wikipedia"));
 
     // Actions
     @Step("Проверить отображение заголовка с текстом 'The Free Encyclopedia …in over 300 languages' на первом экране")
@@ -77,6 +79,13 @@ public class GettingStartedPage {
     @Step("Нажать на кнопку 'Готово' на четвертом экране")
     public GettingStartedPage clickOnTheButtonReadyOnTheFourthScreen() {
         buttonReadyOnTheFourthScreen.click();
+
+        return this;
+    }
+
+    @Step("Проверить отображение поисковой строки")
+    public GettingStartedPage displaySearchField() {
+        searchField.shouldBe(visible);
 
         return this;
     }
