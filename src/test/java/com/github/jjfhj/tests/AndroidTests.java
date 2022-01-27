@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-@Tags({@Tag("emulation"), @Tag("real"), @Tag("selenoid")})
+@Tags({@Tag("selenoid"), @Tag("emulation"), @Tag("real")})
 public class AndroidTests extends TestBase {
 
     GettingStartedPage gettingStartedPage = new GettingStartedPage();
