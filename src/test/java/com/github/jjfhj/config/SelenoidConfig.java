@@ -35,8 +35,8 @@ public interface SelenoidConfig extends Config {
     @Key("appActivity")
     String appActivity();
 
-    @Key("app")
-    String app();
+    @Key("appURL")
+    String appURL();
 
     @Key("videoStorageURL")
     String videoStorageURL();
