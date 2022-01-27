@@ -1,4 +1,4 @@
-# Проект по автоматизации тестирования UI для мобильного приложения [Wikipedia](https://play.google.com/store/apps/details?id=org.wikipedia&hl=ru&gl=US)
+# Проект по автоматизации тестирования UI для мобильного приложения [Wikipedia](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk)
 
 ## <img width="4%" title="Functional" src="images/functional.png"> Покрытый функционал
 
