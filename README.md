@@ -60,61 +60,61 @@ gradle clean ${TASK}
 > <summary> :point_left: <code>browserstack.properties</code> </summary>
 >
 > **В файле должны быть расположены:**
-> + _user_name_ и _access_key_ – данные, расположеные в настройках <code>BrowserStack</code> для <code>App Automate</code>
-> + _appURL_ – ссылка на приложение, для которого будут запускаться тесты
-> + _remoteURL_ – адрес удаленного сервера, где будут запускаться тесты
-> + _device_ – имя девайса, на котором будут запускаться тесты
-> + _os_version_ – версия операционной системы девайса
-> + _project_ – название проекта
-> + _build_ – название сборки
-> + _name_ – название группы тестов
+> + <code>user_name</code> и <code>access_key</code> – данные, расположеные в настройках _BrowserStack_ для _App Automate_
+> + <code>appURL</code> – ссылка на приложение, для которого будут запускаться тесты
+> + <code>remoteURL</code> – адрес удаленного сервера, где будут запускаться тесты
+> + <code>device</code> – имя девайса, на котором будут запускаться тесты
+> + <code>os_version</code> – версия операционной системы девайса
+> + <code>project</code> – название проекта
+> + <code>build</code> – название сборки
+> + <code>name</code> – название группы тестов
 > </details>
 >
 > <details>
 > <summary> :point_left: <code>selenoid.properties</code> </summary>
 >
 > **В файле должны быть расположены:**
-> + _selenoidURL_ – адрес удаленного сервера, на котором будут запускаться тесты
-> + _login_ и _password_ – данные для авторизации на удаленном сервере
-> + _deviceName_ – имя девайса, на котором будут запускаться тесты
-> + _platformName_ – имя платформы, на которой будут запускаться тесты
-> + _version_ – версия операционной системы девайса
-> + _locale_ – локализация приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
-> + _language_ – язык приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
-> + _appPackage_ – идентификатор пакета приложения
-> + _appActivity_ – название основной активности приложения
-> + _appURL_ – ссылка на приложение, для которого будут запускаться тесты
-> + _videoStorageURL_ – адрес хранилища видео выполненных тестов
+> + <code>selenoidURL</code> – адрес удаленного сервера, на котором будут запускаться тесты
+> + <code>login</code> и <code>password</code> – данные для авторизации на удаленном сервере
+> + <code>deviceName</code> – имя девайса, на котором будут запускаться тесты
+> + <code>platformName</code> – имя платформы, на которой будут запускаться тесты
+> + <code>version</code> – версия операционной системы девайса
+> + <code>locale</code> – локализация приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + <code>language</code> – язык приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + <code>appPackage</code> – идентификатор пакета приложения
+> + <code>appActivity</code> – название основной активности приложения
+> + <code>appURL</code> – ссылка на приложение, для которого будут запускаться тесты
+> + <code>videoStorageURL</code> – адрес хранилища видео выполненных тестов
 > </details>
 >
 > <details>
 > <summary> :point_left: <code>emulation.properties</code> </summary>
 >
 > **В файле должны быть расположены:**
-> + _deviceName_ – имя девайса, на котором будут запускаться тесты
-> + _platformName_ – имя платформы, на которой будут запускаться тесты
-> + _version_ – версия операционной системы девайса
-> + _locale_ – локализация приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
-> + _language_ – язык приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
-> + _appPackage_ – идентификатор пакета приложения
-> + _appActivity_ – название основной активности приложения
-> + _app_ – путь до приложения, для которого будут запускаться тесты
-> + _remoteURL_ – адрес удаленного сервера, на котором будут запускаться тесты
+> + <code>deviceName</code> – имя девайса, на котором будут запускаться тесты
+> + <code>platformName</code> – имя платформы, на которой будут запускаться тесты
+> + <code>version</code> – версия операционной системы девайса
+> + <code>locale</code> – локализация приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + <code>language</code> – язык приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + <code>appPackage</code> – идентификатор пакета приложения
+> + <code>appActivity</code> – название основной активности приложения
+> + <code>app</code> – путь до приложения, для которого будут запускаться тесты
+> + <code>remoteURL</code> – адрес удаленного сервера, на котором будут запускаться тесты
 > </details>
 >
 > <details>
 > <summary> :point_left: <code>real.properties</code> </summary>
 >
 > **В файле должны быть расположены:**
-> + _deviceName_ – имя девайса, на котором будут запускаться тесты
-> + _platformName_ – имя платформы, на которой будут запускаться тесты
-> + _version_ – версия операционной системы девайса
-> + _locale_ – локализация приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
-> + _language_ – язык приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
-> + _appPackage_ – идентификатор пакета приложения
-> + _appActivity_ – название основной активности приложения
-> + _app_ – путь до приложения, для которого будут запускаться тесты
-> + _remoteURL_ – адрес удаленного сервера, на котором будут запускаться тесты
+> + <code>deviceName</code> – имя девайса, на котором будут запускаться тесты
+> + <code>platformName</code> – имя платформы, на которой будут запускаться тесты
+> + <code>version</code> – версия операционной системы девайса
+> + <code>locale</code> – локализация приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + <code>language</code> – язык приложения (код по стандарту [ISO-639](https://ru.wiktionary.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C:ISO_639))
+> + <code>appPackage</code> – идентификатор пакета приложения
+> + <code>appActivity</code> – название основной активности приложения
+> + <code>app</code> – путь до приложения, для которого будут запускаться тесты
+> + <code>remoteURL</code> – адрес удаленного сервера, на котором будут запускаться тесты
 > </details>
 >
 > </details>
