@@ -1,46 +1,45 @@
 package com.github.jjfhj.tests;
 
-import io.appium.java_client.MobileBy;
+import com.github.jjfhj.pages.GettingStartedPage;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
+@Tags({@Tag("selenoid"), @Tag("emulation"), @Tag("real")})
 public class AndroidTests extends TestBase {
 
-    @Test
-    @DisplayName("Отображение результатов поиска")
-    void displayingSearchResultsTest() {
-        step("Нажать на поле поиска", () -> {
-            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
-        });
-        step("Ввести значение 'BrowserStack' в поле и выполнить поиск", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
-        });
-        step("Проверить отображение результатов поиска", () -> {
-            $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
-        });
-    }
+    GettingStartedPage gettingStartedPage = new GettingStartedPage();
 
     @Test
-    @DisplayName("Открытие страницы из результатов поиска")
-    void openingPageFromSearchResultsTest() {
-        step("Нажать на поле поиска", () -> {
-            $(MobileBy.AccessibilityId("Search Wikipedia")).click();
+    @DisplayName("Проверка первых четырех экранов Getting Started")
+    void checkingTheFirstFourScreensOfGettingStarted() {
+        step("Проверить отображение заголовка с текстом 'The Free Encyclopedia …in over 300 languages' " +
+                "на первом экране", () -> {
+            gettingStartedPage.titleDisplayOnFirstScreen();
         });
-        step("Ввести значение 'Moon' в поле и выполнить поиск", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Moon");
+        step("Нажать на кнопку 'Далее' на первом экране", () -> {
+            gettingStartedPage.clickNextOnTheFirstScreen();
         });
-        step("Нажать на результат поиска с заголовком 'Moon'", () -> {
-            $$(byClassName("android.widget.TextView")).find(text("Moon")).click();
+        step("Проверить отображение заголовка с текстом 'New ways to explore' на втором экране", () -> {
+            gettingStartedPage.titleDisplayOnSecondScreen();
         });
-        step("Проверить отображение подзаголовка 'Earth's natural satellite' на открывшейся странице", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/view_page_subtitle_text")).shouldHave(text("Earth's natural satellite"));
+        step("Нажать на кнопку 'Далее' на втором экране", () -> {
+            gettingStartedPage.clickNextOnTheSecondScreen();
+        });
+        step("Проверить отображение заголовка с текстом 'Reading lists with sync' на третьем экране", () -> {
+            gettingStartedPage.titleDisplayOnThirdScreen();
+        });
+        step("Нажать на кнопку 'Далее' на третьем экране", () -> {
+            gettingStartedPage.clickNextOnTheThirdScreen();
+        });
+        step("Проверить отображение заголовка с текстом 'Send anonymous data' на четвертом экране", () -> {
+            gettingStartedPage.titleDisplayOnFourthScreen();
+        });
+        step("Нажать на кнопку 'Готово' на четвертом экране", () -> {
+            gettingStartedPage.clickOnTheButtonReadyOnTheFourthScreen();
         });
     }
 }
