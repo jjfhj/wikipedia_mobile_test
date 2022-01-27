@@ -57,7 +57,7 @@ gradle clean ${TASK}
 > <summary> :information_source: Для запуска тестов должны существовать следующие файлы ⇩ </summary>
 >
 > <details>
-> <summary> <code>browserstack.properties</code> </summary>
+> <summary> :point_left: <code>browserstack.properties</code> </summary>
 >
 > **В файле должны быть расположены:**
 > + _user_name_ и _access_key_ – данные, расположеные в настройках <code>BrowserStack</code> для <code>App Automate</code>
@@ -71,7 +71,7 @@ gradle clean ${TASK}
 > </details>
 >
 > <details>
-> <summary> <code>selenoid.properties</code> </summary>
+> <summary> :point_left: <code>selenoid.properties</code> </summary>
 >
 > **В файле должны быть расположены:**
 > + _selenoidURL_ – адрес удаленного сервера, на котором будут запускаться тесты
@@ -88,7 +88,7 @@ gradle clean ${TASK}
 > </details>
 >
 > <details>
-> <summary> <code>emulation.properties</code> </summary>
+> <summary> :point_left: <code>emulation.properties</code> </summary>
 >
 > **В файле должны быть расположены:**
 > + _deviceName_ – имя девайса, на котором будут запускаться тесты
@@ -103,7 +103,7 @@ gradle clean ${TASK}
 > </details>
 >
 > <details>
-> <summary> <code>real.properties</code> </summary>
+> <summary> :point_left: <code>real.properties</code> </summary>
 >
 > **В файле должны быть расположены:**
 > + _deviceName_ – имя девайса, на котором будут запускаться тесты
