@@ -275,7 +275,7 @@ allure serve build/allure-results
 
 > К каждому тесту в отчете прилагается видео. Примеры таких видео представлены ниже.
 
-## <img width="4%" title="BrowserStack" src="images/logo/Browserstack.svg"> Пример запуска теста в BrowserStack
+## <img width="4%" title="BrowserStack" src="images/logo/Browserstack.svg"> Пример запуска теста в [BrowserStack](https://www.browserstack.com/)
 
 <p align="center">
 <img title="BrowserStack Video" src="images/gif/browserstack_video.gif">
