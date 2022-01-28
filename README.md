@@ -166,7 +166,7 @@ allure serve build/allure-results
 
 ### :rocket: Для формирования отчета о прохождении тестов в Allure Report необходимо выполнить следующий шаг:
 
-3. После выполнения сборки нажать на любую
+5. После выполнения сборки нажать на любую
    ссылку/иконку <img width="3%" title="Allure Report" src="images/logo/Allure_Report.svg"> <code>"Allure Report"</code>
 
 <p align="center">
