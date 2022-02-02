@@ -14,23 +14,23 @@ import static java.lang.String.format;
 
 public class SelenoidMobileDriver implements WebDriverProvider {
 
-    private static final SelenoidConfig selenoid = ConfigFactory.create(SelenoidConfig.class, System.getProperties());
-    private static final String selenoidURL = selenoid.selenoidURL();
-    private static final String login = selenoid.login();
-    private static final String password = selenoid.password();
-    private static final String deviceName = selenoid.deviceName();
-    private static final String platformName = selenoid.platformName();
-    private static final String version = selenoid.version();
-    private static final String locale = selenoid.locale();
-    private static final String language = selenoid.language();
-    private static final String appPackage = selenoid.appPackage();
-    private static final String appActivity = selenoid.appActivity();
-    private static final String app = selenoid.appURL();
-    private static String remoteURL = format("https://%s:%s@%s", login, password, selenoidURL);
+    private static final SelenoidConfig SELENOID_CONFIG = ConfigFactory.create(SelenoidConfig.class, System.getProperties());
+    private static final String SELENOID_URL = SELENOID_CONFIG.selenoidURL();
+    private static final String LOGIN = SELENOID_CONFIG.login();
+    private static final String PASSWORD = SELENOID_CONFIG.password();
+    private static final String DEVICE_NAME = SELENOID_CONFIG.deviceName();
+    private static final String PLATFORM_NAME = SELENOID_CONFIG.platformName();
+    private static final String VERSION = SELENOID_CONFIG.version();
+    private static final String LOCALE = SELENOID_CONFIG.locale();
+    private static final String LANGUAGE = SELENOID_CONFIG.language();
+    private static final String APP_PACKAGE = SELENOID_CONFIG.appPackage();
+    private static final String APP_ACTIVITY = SELENOID_CONFIG.appActivity();
+    private static final String APP = SELENOID_CONFIG.appURL();
+    private static final String REMOTE_URL = format("https://%s:%s@%s", LOGIN, PASSWORD, SELENOID_URL);
 
     public static URL getUrl() {
         try {
-            return new URL(remoteURL);
+            return new URL(REMOTE_URL);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -39,15 +39,15 @@ public class SelenoidMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
-        desiredCapabilities.setCapability("deviceName", deviceName);
-        desiredCapabilities.setCapability("platformName", platformName);
-        desiredCapabilities.setCapability("version", version);
+        desiredCapabilities.setCapability("deviceName", DEVICE_NAME);
+        desiredCapabilities.setCapability("platformName", PLATFORM_NAME);
+        desiredCapabilities.setCapability("version", VERSION);
 
-        desiredCapabilities.setCapability("locale", locale);
-        desiredCapabilities.setCapability("language", language);
+        desiredCapabilities.setCapability("locale", LOCALE);
+        desiredCapabilities.setCapability("language", LANGUAGE);
 
-        desiredCapabilities.setCapability("appPackage", appPackage);
-        desiredCapabilities.setCapability("appActivity", appActivity);
+        desiredCapabilities.setCapability("appPackage", APP_PACKAGE);
+        desiredCapabilities.setCapability("appActivity", APP_ACTIVITY);
 
         desiredCapabilities.setCapability("app", apkUrl());
 
@@ -59,7 +59,7 @@ public class SelenoidMobileDriver implements WebDriverProvider {
 
     private URL apkUrl() {
         try {
-            return new URL(app);
+            return new URL(APP);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

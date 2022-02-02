@@ -8,11 +8,11 @@ import java.net.URL;
 
 public class SelenoidVideo {
 
-    private static final SelenoidConfig selenoid = ConfigFactory.create(SelenoidConfig.class, System.getProperties());
-    private static final String videoStorageURL = selenoid.videoStorageURL();
+    private static final SelenoidConfig SELENOID_CONFIG = ConfigFactory.create(SelenoidConfig.class, System.getProperties());
+    private static final String VIDEO_STORAGE_URL = SELENOID_CONFIG.videoStorageURL();
 
     public static URL getVideoUrl(String sessionId) {
-        String videoUrl = videoStorageURL + sessionId + ".mp4";
+        String videoUrl = VIDEO_STORAGE_URL + sessionId + ".mp4";
 
         try {
             return new URL(videoUrl);

@@ -7,13 +7,13 @@ import static io.restassured.RestAssured.given;
 
 public class BrowserstackVideo {
 
-    private static BrowserstackConfig browserstack = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
-    private static String user = browserstack.user_name();
-    private static String key = browserstack.access_key();
+    private static final BrowserstackConfig BROWSERSTACK_CONFIG = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+    private static final String USER = BROWSERSTACK_CONFIG.user_name();
+    private static final String KEY = BROWSERSTACK_CONFIG.access_key();
 
     public static String getVideoUrl(String sessionId) {
         return given()
-                .auth().basic(user, key)
+                .auth().basic(USER, KEY)
                 .when()
                 .get("https://api-cloud.browserstack.com/app-automate/sessions/" + sessionId + ".json")
                 .then()

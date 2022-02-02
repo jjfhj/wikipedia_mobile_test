@@ -14,20 +14,20 @@ import static com.github.jjfhj.utils.FileUtils.getAbsolutePath;
 
 public class RealMobileDriver implements WebDriverProvider {
 
-    private static final RealConfig real = ConfigFactory.create(RealConfig.class, System.getProperties());
-    private static final String deviceName = real.deviceName();
-    private static final String platformName = real.platformName();
-    private static final String version = real.version();
-    private static final String locale = real.locale();
-    private static final String language = real.language();
-    private static final String appPackage = real.appPackage();
-    private static final String appActivity = real.appActivity();
-    private static final String app = real.app();
-    private static final String url = real.remoteURL();
+    private static final RealConfig REAL_CONFIG = ConfigFactory.create(RealConfig.class, System.getProperties());
+    private static final String DEVICE_NAME = REAL_CONFIG.deviceName();
+    private static final String PLATFORM_NAME = REAL_CONFIG.platformName();
+    private static final String VERSION = REAL_CONFIG.version();
+    private static final String LOCALE = REAL_CONFIG.locale();
+    private static final String LANGUAGE = REAL_CONFIG.language();
+    private static final String APP_PACKAGE = REAL_CONFIG.appPackage();
+    private static final String APP_ACTIVITY = REAL_CONFIG.appActivity();
+    private static final String APP = REAL_CONFIG.app();
+    private static final String URL = REAL_CONFIG.remoteURL();
 
     public static URL getUrl() {
         try {
-            return new URL(url);
+            return new URL(URL);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -36,18 +36,18 @@ public class RealMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
-        desiredCapabilities.setCapability("deviceName", deviceName);
-        desiredCapabilities.setCapability("platformName", platformName);
-        desiredCapabilities.setCapability("version", version);
+        desiredCapabilities.setCapability("deviceName", DEVICE_NAME);
+        desiredCapabilities.setCapability("platformName", PLATFORM_NAME);
+        desiredCapabilities.setCapability("version", VERSION);
 
-        desiredCapabilities.setCapability("locale", locale);
-        desiredCapabilities.setCapability("language", language);
+        desiredCapabilities.setCapability("locale", LOCALE);
+        desiredCapabilities.setCapability("language", LANGUAGE);
 
-        desiredCapabilities.setCapability("appPackage", appPackage);
-        desiredCapabilities.setCapability("appActivity", appActivity);
+        desiredCapabilities.setCapability("appPackage", APP_PACKAGE);
+        desiredCapabilities.setCapability("appActivity", APP_ACTIVITY);
 
         desiredCapabilities.setCapability("app",
-                getAbsolutePath(app));
+                getAbsolutePath(APP));
 
         return new AndroidDriver(getUrl(), desiredCapabilities);
     }

@@ -12,20 +12,20 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    private static final BrowserstackConfig browserstack = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
-    private static final String user = browserstack.user_name();
-    private static final String key = browserstack.access_key();
-    private static final String app = browserstack.appURL();
-    private static final String url = browserstack.remoteURL();
-    private static final String device = browserstack.device();
-    private static final String os_version = browserstack.os_version();
-    private static final String project = browserstack.project();
-    private static final String build = browserstack.build();
-    private static final String name = browserstack.name();
+    private static final BrowserstackConfig BROWSERSTACK_CONFIG = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+    private static final String USER = BROWSERSTACK_CONFIG.user_name();
+    private static final String KEY = BROWSERSTACK_CONFIG.access_key();
+    private static final String APP = BROWSERSTACK_CONFIG.appURL();
+    private static final String URL = BROWSERSTACK_CONFIG.remoteURL();
+    private static final String DEVICE = BROWSERSTACK_CONFIG.device();
+    private static final String OS_VERSION = BROWSERSTACK_CONFIG.os_version();
+    private static final String PROJECT = BROWSERSTACK_CONFIG.project();
+    private static final String BUILD = BROWSERSTACK_CONFIG.build();
+    private static final String NAME = BROWSERSTACK_CONFIG.name();
 
     public static URL getUrl() {
         try {
-            return new URL(url);
+            return new URL(URL);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -34,20 +34,20 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         // Set your access credentials
-        desiredCapabilities.setCapability("browserstack.user", user);
-        desiredCapabilities.setCapability("browserstack.key", key);
+        desiredCapabilities.setCapability("browserstack.user", USER);
+        desiredCapabilities.setCapability("browserstack.key", KEY);
 
         // Set URL of the application under test
-        desiredCapabilities.setCapability("app", app);
+        desiredCapabilities.setCapability("app", APP);
 
         // Specify device and os_version for testing
-        desiredCapabilities.setCapability("device", device);
-        desiredCapabilities.setCapability("os_version", os_version);
+        desiredCapabilities.setCapability("device", DEVICE);
+        desiredCapabilities.setCapability("os_version", OS_VERSION);
 
         // Set other BrowserStack capabilities
-        desiredCapabilities.setCapability("project", project);
-        desiredCapabilities.setCapability("build", build);
-        desiredCapabilities.setCapability("name", name);
+        desiredCapabilities.setCapability("project", PROJECT);
+        desiredCapabilities.setCapability("build", BUILD);
+        desiredCapabilities.setCapability("name", NAME);
 
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above
