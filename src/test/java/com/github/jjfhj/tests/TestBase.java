@@ -8,6 +8,7 @@ import com.github.jjfhj.drivers.EmulationMobileDriver;
 import com.github.jjfhj.drivers.RealMobileDriver;
 import com.github.jjfhj.drivers.SelenoidMobileDriver;
 import com.github.jjfhj.helpers.Attach;
+import com.github.jjfhj.pages.GettingStartedPage;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,6 +18,8 @@ import static com.github.jjfhj.helpers.Attach.getSessionId;
 import static io.qameta.allure.Allure.step;
 
 public class TestBase {
+
+    GettingStartedPage gettingStartedPage = new GettingStartedPage();
 
     public static String deviceHost = System.getProperty("deviceHost");
 
