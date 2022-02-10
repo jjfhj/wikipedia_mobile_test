@@ -1,11 +1,7 @@
 # Проект по автоматизации тестирования UI для мобильного приложения [Wikipedia](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk)
 
 <p align="center">
-<img width="35%" title="Wikipedia" src="images/logo/wikipedia.png">
-</p>
-
-<p align="center">
-<img width="35%" title="Wikipedia" src="images/logo/wikipedia-logo.png">
+<img width="45%" title="Wikipedia" src="images/logo/wikipedia-logo.png">
 </p>
 
 ## <img width="4%" title="Functional" src="images/logo/functional.png"> Покрытый функционал
