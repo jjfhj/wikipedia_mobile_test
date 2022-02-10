@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-@Layer("web")
+@Layer("ui")
 @Owner("kgordienko")
 @Tag("emulation")
 @JiraIssues({@JiraIssue("HOMEWORK-329")})

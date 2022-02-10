@@ -18,7 +18,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
-@Layer("web")
+@Layer("ui")
 @Owner("kgordienko")
 @Tag("browserstack")
 @JiraIssues({@JiraIssue("HOMEWORK-329")})
