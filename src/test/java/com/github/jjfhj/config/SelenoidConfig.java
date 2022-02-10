@@ -2,6 +2,7 @@ package com.github.jjfhj.config;
 
 import org.aeonbits.owner.Config;
 
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
         "file:/tmp/selenoid.properties",
