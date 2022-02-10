@@ -4,6 +4,28 @@
 <img width="45%" title="Wikipedia" src="images/logo/wikipedia-logo.png">
 </p>
 
+## <img width="4%" title="Contents" src="images/logo/contents.png"> Содержание
+
+> ➠ [Покрытый функционал](#-покрытый-функционал)
+>
+> ➠ [Технологический стек](#-технологический-стек)
+>
+> ➠ [Запуск тестов из терминала](#-запуск-тестов-из-терминала)
+>
+> ➠ [Запуск тестов в Jenkins](#-запуск-тестов-в-jenkins)
+>
+> ➠ [Отчет о результатах тестирования в Allure Report](#-отчет-о-результатах-тестирования-в-allure-report)
+>
+> ➠ [Интеграция тестов c тест-менеджмент системой Allure TestOps](#-интеграция-тестов-c-тест-менеджмент-системой-allure-testops)
+>
+> ➠ [Интеграция тестов c таск-трекер системой Jira](#-интеграция-тестов-c-таск-трекер-системой-jira)
+>
+> ➠ [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
+>
+> ➠ [Пример запуска теста в BrowserStack](#-пример-запуска-теста-в-browserstack)
+>
+> ➠ [Пример запуска теста в Selenoid](#-пример-запуска-теста-в-selenoid)
+
 ## <img width="4%" title="Functional" src="images/logo/functional.png"> Покрытый функционал
 
 > Разработаны автотесты на <code>UI</code>.
@@ -13,6 +35,8 @@
 - [x] Отображение результатов поиска
 - [x] Открытие страницы из результатов поиска
 - [x] Проверка первых четырех экранов Getting Started
+
+[Вернуться к содержанию](#-содержание) :top:
 
 ## <img width="4%" title="Technologies" src="images/logo/technologies.png"> Технологический стек
 
@@ -30,6 +54,8 @@
 <img width="6%" title="Rest Assured" src="images/logo/Rest-Assured.svg">
 <img width="6%" title="Appium" src="images/logo/Appium.svg">
 <img width="6%" title="BrowserStack" src="images/logo/Browserstack.svg">
+<img width="6%" title="Telegram" src="images/logo/Telegram.svg">
+<img width="6%" title="Jira" src="images/logo/Jira.svg">
 </p>
 
 > В данном проекте автотесты написаны на <code>Java</code> с использованием фреймворков <code>Selenide</code> и <code>Appium</code> для UI-тестов, и библиотеки <code>REST Assured</code> для отображения видео в отчете.
@@ -46,7 +72,11 @@
 >
 > <code>Jenkins</code> выполняет запуск тестов.
 >
-> Автотесты интегрируются с тест-менеджмент системой <code>Allure TestOps</code>.
+> Автотесты интегрируются с тест-менеджмент системой <code>Allure TestOps</code> и таск-трекер системой <code>Jira</code>.
+>
+> После завершения прогона отправляются уведомления с помощью бота в <code>Telegram</code>.
+
+[Вернуться к содержанию](#-содержание) :top:
 
 ## <img width="4%" title="Terminal" src="images/logo/terminal.png"> Запуск тестов из терминала
 
@@ -155,6 +185,8 @@ allure serve build/allure-results
 
 > :exclamation: Для формирования отчета должен быть установлен <code>Allure</code>.
 
+[Вернуться к содержанию](#-содержание) :top:
+
 ## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/jjfhj-wikipedia_mobile_test/)
 
 ### :rocket: Для запуска тестов в Jenkins необходимо выполнить следующие шаги:
@@ -176,6 +208,8 @@ allure serve build/allure-results
 <p align="center">
 <img title="Allure Report" src="images/screens/jenkins_allure_report.png">
 </p>
+
+[Вернуться к содержанию](#-содержание) :top:
 
 ## <img width="4%" title="Allure Report" src="images/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/jjfhj-wikipedia_mobile_test/allure/)
 
@@ -249,6 +283,8 @@ allure serve build/allure-results
 >
 > </details>
 
+[Вернуться к содержанию](#-содержание) :top:
+
 ## <img width="4%" title="Allure TestOps" src="images/logo/Allure_TestOps.svg"> Интеграция тестов c тест-менеджмент системой [Allure TestOps](https://allure.autotests.cloud/project/905/dashboards)
 
 > <code>Allure TestOps</code> используется для хранения всех авто и ручных тестов, запусков и их результатов, а также статистики и отчетов.
@@ -257,6 +293,30 @@ allure serve build/allure-results
 
 <p align="center">
 <img title="Allure Overview Dashboard" src="images/screens/allure_overview_dashboard.png">
+</p>
+
+### :jigsaw: Кастомный дашборд
+
+<p align="center">
+<img title="Allure Custom Dashboard" src="images/screens/allure_custom_dashboard.png">
+</p>
+
+### :jigsaw: Дашборд по типам тестов
+
+<p align="center">
+<img title="Dashboard by Test Types" src="images/screens/dashboard_by_test_types.png">
+</p>
+
+### :jigsaw: Дашборд по стендам
+
+<p align="center">
+<img title="Dashboard by Stands" src="images/screens/dashboard_by_stands.png">
+</p>
+
+### :jigsaw: Дашборд по команде
+
+<p align="center">
+<img title="Dashboard by Team" src="images/screens/dashboard_by_team.png">
 </p>
 
 ### :jigsaw: Запуски тестов
@@ -277,6 +337,29 @@ allure serve build/allure-results
 <img title="Allure Test Cases" src="images/screens/allure_testcases.png">
 </p>
 
+[Вернуться к содержанию](#-содержание) :top:
+
+## <img width="4%" title="Jira" src="images/logo/Jira.svg"> Интеграция тестов c таск-трекер системой [Jira](https://jira.autotests.cloud/browse/HOMEWORK-329)
+
+> В проекте реализована интеграция с <code>Jira</code>, что позволяет добавлять в задачи тест-кейсы, запуски и их результаты.
+
+<p align="center">
+<img title="Jira Issues" src="images/screens/jira_issues.png">
+</p>
+
+[Вернуться к содержанию](#-содержание) :top:
+
+## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
+
+> После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
+> Фреймворк также поддерживает уведомления по _электронной почте, Slack, Skype_ и _Mattermost_.
+
+<p align="center">
+<img title="Telegram Notifications" src="images/screens/telegram_notifications.png">
+</p>
+
+[Вернуться к содержанию](#-содержание) :top:
+
 > К каждому тесту в отчете прилагается видео. Примеры таких видео представлены ниже.
 
 ## <img width="4%" title="BrowserStack" src="images/logo/Browserstack.svg"> Пример запуска теста в [BrowserStack](https://www.browserstack.com/)
@@ -285,8 +368,12 @@ allure serve build/allure-results
 <img title="BrowserStack Video" src="images/gif/browserstack_video.gif">
 </p>
 
+[Вернуться к содержанию](#-содержание) :top:
+
 ## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid
 
 <p align="center">
 <img title="Selenoid Video" src="images/gif/selenoid_video.gif">
 </p>
+
+[Вернуться к содержанию](#-содержание) :top:
