@@ -2,7 +2,11 @@ package com.github.jjfhj.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:config/emulation.properties"})
+@Config.Sources({
+        "system:properties",
+        "file:/tmp/emulation.properties",
+        "classpath:config/emulation.properties"
+})
 public interface EmulationConfig extends Config {
 
     @Key("deviceName")

@@ -2,7 +2,11 @@ package com.github.jjfhj.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:config/browserstack.properties"})
+@Config.Sources({
+        "system:properties",
+        "file:/tmp/browserstack.properties",
+        "classpath:config/browserstack.properties"
+})
 public interface BrowserstackConfig extends Config {
 
     @Key("user_name")

@@ -2,7 +2,11 @@ package com.github.jjfhj.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:config/real.properties"})
+@Config.Sources({
+        "system:properties",
+        "file:/tmp/real.properties",
+        "classpath:config/real.properties"
+})
 public interface RealConfig extends Config {
 
     @Key("deviceName")
