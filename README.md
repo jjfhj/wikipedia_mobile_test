@@ -1,6 +1,14 @@
 # Проект по автоматизации тестирования UI для мобильного приложения [Wikipedia](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk)
 
-## <img width="4%" title="Functional" src="images/functional.png"> Покрытый функционал
+<p align="center">
+<img width="35%" title="Wikipedia" src="images/logo/wikipedia.png">
+</p>
+
+<p align="center">
+<img width="35%" title="Wikipedia" src="images/logo/wikipedia-logo.png">
+</p>
+
+## <img width="4%" title="Functional" src="images/logo/functional.png"> Покрытый функционал
 
 > Разработаны автотесты на <code>UI</code>.
 
@@ -10,7 +18,7 @@
 - [x] Открытие страницы из результатов поиска
 - [x] Проверка первых четырех экранов Getting Started
 
-## <img width="4%" title="Technologies" src="images/technologies.png"> Технологический стек
+## <img width="4%" title="Technologies" src="images/logo/technologies.png"> Технологический стек
 
 <p align="center">
 <img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">
@@ -44,7 +52,7 @@
 >
 > Автотесты интегрируются с тест-менеджмент системой <code>Allure TestOps</code>.
 
-## <img width="4%" title="Terminal" src="images/terminal.png"> Запуск тестов из терминала
+## <img width="4%" title="Terminal" src="images/logo/terminal.png"> Запуск тестов из терминала
 
 ### :joystick: Запуск тестов
 
