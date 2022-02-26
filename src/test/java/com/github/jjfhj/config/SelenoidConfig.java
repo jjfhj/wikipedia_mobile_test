@@ -10,39 +10,39 @@ import org.aeonbits.owner.Config;
 })
 public interface SelenoidConfig extends Config {
 
-    @Key("selenoidURL")
+//    @Key("selenoidURL")
     String selenoidURL();
 
-    @Key("login")
+//    @Key("login")
     String login();
 
-    @Key("password")
+//    @Key("password")
     String password();
 
-    @Key("deviceName")
+//    @Key("deviceName")
     String deviceName();
 
-    @Key("platformName")
+//    @Key("platformName")
     String platformName();
 
-    @Key("version")
+//    @Key("version")
     String version();
 
-    @Key("locale")
+//    @Key("locale")
     String locale();
 
-    @Key("language")
+//    @Key("language")
     String language();
 
-    @Key("appPackage")
+//    @Key("appPackage")
     String appPackage();
 
-    @Key("appActivity")
+//    @Key("appActivity")
     String appActivity();
 
-    @Key("appURL")
+//    @Key("appURL")
     String appURL();
 
-    @Key("videoStorageURL")
+//    @Key("videoStorageURL")
     String videoStorageURL();
 }

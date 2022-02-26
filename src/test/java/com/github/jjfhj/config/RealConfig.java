@@ -10,30 +10,30 @@ import org.aeonbits.owner.Config;
 })
 public interface RealConfig extends Config {
 
-    @Key("deviceName")
+//    @Key("deviceName")
     String deviceName();
 
-    @Key("platformName")
+//    @Key("platformName")
     String platformName();
 
-    @Key("version")
+//    @Key("version")
     String version();
 
-    @Key("locale")
+//    @Key("locale")
     String locale();
 
-    @Key("language")
+//    @Key("language")
     String language();
 
-    @Key("appPackage")
+//    @Key("appPackage")
     String appPackage();
 
-    @Key("appActivity")
+//    @Key("appActivity")
     String appActivity();
 
-    @Key("app")
+//    @Key("app")
     String app();
 
-    @Key("remoteURL")
+//    @Key("remoteURL")
     String remoteURL();
 }
