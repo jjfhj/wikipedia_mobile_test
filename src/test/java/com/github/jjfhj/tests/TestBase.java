@@ -31,9 +31,8 @@ public class TestBase {
 
     @BeforeEach
     public void startDriver() {
-        step("Открыть приложение", () -> {
-            Selenide.open();
-        });
+        step("Открыть приложение", () ->
+                Selenide.open());
     }
 
     @AfterEach
@@ -46,8 +45,7 @@ public class TestBase {
             Attach.attachVideo(sessionId);
         }
 
-        step("Закрыть приложение", () -> {
-            Selenide.closeWebDriver();
-        });
+        step("Закрыть приложение", () ->
+                Selenide.closeWebDriver());
     }
 }

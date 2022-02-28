@@ -1,9 +1,9 @@
 package com.github.jjfhj.tests;
 
-import com.github.jjfhj.JiraIssue;
-import com.github.jjfhj.JiraIssues;
-import com.github.jjfhj.Layer;
-import com.github.jjfhj.Microservice;
+import com.github.jjfhj.annotations.JiraIssue;
+import com.github.jjfhj.annotations.JiraIssues;
+import com.github.jjfhj.annotations.Layer;
+import com.github.jjfhj.annotations.Microservice;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
